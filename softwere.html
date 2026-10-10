@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Foodie - Food Ordering System</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #2e0505;
+        }
+
+        /* ================= HERO SECTION ================= */
+
+        .hero {
+            height: 80vh;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("ritae-noodles-5252012_1920.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            text-shadow: 3px 3px 8px black;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #ff5a36;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #ff3210;
+            transform: scale(1.05);
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            height: 75px;
+            background: #292944;
+            display: flex;
+            align-items: center;
+            padding: 0 50px;
+            gap: 35px;
+        }
+
+        .logo {
+            width: 52px;
+            height: 52px;
+            background-image: url(panda.svg);
+            background-size: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .brand {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            margin-right: auto;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #00c9a7;
+        }
+
+
+        /* ================= MAIN TITLE ================= */
+
+        .main-title {
+            text-align: center;
+            padding: 45px 20px 25px;
+        }
+
+        .main-title h1 {
+            color: #9b351f;
+            font-size: 35px;
+            text-shadow: 2px 2px 3px #aaa;
+        }
+
+
+        /* ================= ORDER SECTION ================= */
+
+        .order-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .order-section h2 {
+            color: #292944;
+            font-size: 30px;
+        }
+
+        .order-btn {
+            background: #ff5a36;
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-btn:hover {
+            background: #e43e1d;
+            transform: translateY(-3px);
+        }
+
+
+        /* ================= DEALS ================= */
+
+        .deals {
+            max-width: 1200px;
+            margin: 30px auto 70px;
+            padding: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 25px;
+        }
+
+        .deal-card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transition: 0.3s;
+            border-top: 5px solid #ff5a36;
+        }
+
+        .deal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .deal-card h3 {
+            color: #9b351f;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .deal-card p {
+            margin: 12px 0;
+            font-size: 16px;
+        }
+
+        .price {
+            color: #ff5a36;
+            font-weight: bold;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #292944;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                padding: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                height: auto;
+            }
+
+            .brand {
+                margin-right: 0;
+            }
+
+            .nav-link {
+                font-size: 14px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            .order-section {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+   
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>ENJOY ONLINE HAPPINESS</h1>
+
+            <p>Online Food Ordering System</p>
+
+            <a href="#deals" class="hero-btn">
+                Explore Food
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo"></div>
+
+        <div class="brand">
+            🍔 FOODIE
+        </div>
+
+        <a href="#" class="nav-link">Home</a>
+
+        <a href="#deals" class="nav-link">Menu</a>
+
+        <a href="#" class="nav-link">Cart</a>
+
+        <a href="#" class="nav-link">My Orders</a>
+
+        <a href="#" class="nav-link">Contact</a>
+
+    </nav>
+
+
+    <!-- ================= TITLE ================= -->
+
+    <section class="main-title">
+
+        <h1>🍔 FOODIE - FOOD ORDERING SYSTEM</h1>
+
+    </section>
+
+
+    <!-- ================= ORDER ================= -->
+
+    <section class="order-section">
+
+        <h2>
+            Delicious Food At Your Door 🍕
+        </h2>
+
+        <button class="order-btn">
+            Order Now
+        </button>
+
+    </section>
+
+
+    <!-- ================= DEALS ================= -->
+
+    <section class="deals" id="deals">
+
+
+        <div class="deal-card">
+
+            <h3>Deal 1</h3>
+
+            <p>🍕 Pizza
+                <span class="price">Rs. 1000</span>
+            </p>
+
+            <p>🍔 Burger
+                <span class="price">Rs. 300</span>
+            </p>
+
+            <p>🍟 Fries
+                <span class="price">Rs. 200</span>
+            </p>
+
+            <p>🥤 Drink
+                <span class="price">Rs. 150</span>
+            </p>
+
+        </div>
+
+
+        <div class="deal-card">
+
+            <h3>Deal 2</h3>
+
+            <p>🍕 Pizza
+                <span class="price">Rs. 1000</span>
+            </p>
+
+            <p>🍔 Burger
+                <span class="price">Rs. 300</span>
+            </p>
+
+            <p>🍟 Fries
+                <span class="price">Rs. 200</span>
+            </p>
+
+            <p>🥤 Drink
+                <span class="price">Rs. 150</span>
+            </p>
+
+        </div>
+
+
+        <div class="deal-card">
+
+            <h3>Deal 3</h3>
+
+            <p>🍕 Pizza
+                <span class="price">Rs. 1000</span>
+            </p>
+
+            <p>🍔 Burger
+                <span class="price">Rs. 300</span>
+            </p>
+
+            <p>🍟 Fries
+                <span class="price">Rs. 200</span>
+            </p>
+
+            <p>🥤 Drink
+                <span class="price">Rs. 150</span>
+            </p>
+
+        </div>
+
+
+        <div class="deal-card">
+
+            <h3>Deal 4</h3>
+
+            <p>🍕 Pizza
+                <span class="price">Rs. 1000</span>
+            </p>
+
+            <p>🍔 Burger
+                <span class="price">Rs. 300</span>
+            </p>
+
+            <p>🍟 Fries
+                <span class="price">Rs. 200</span>
+            </p>
+
+            <p>🥤 Drink
+                <span class="price">Rs. 150</span>
+            </p>
+
+        </div>
+
+
+        <div class="deal-card">
+
+            <h3>Deal 5</h3>
+
+            <p>🍕 Pizza
+                <span class="price">Rs. 1000</span>
+            </p>
+
+            <p>🍔 Burger
+                <span class="price">Rs. 300</span>
+            </p>
+
+            <p>🍟 Fries
+                <span class="price">Rs. 200</span>
+            </p>
+
+            <p>🥤 Drink
+                <span class="price">Rs. 150</span>
+            </p>
+
+        </div>
+
+
+        <div class="deal-card">
+
+            <h3>Deal 6</h3>
+
+            <p>🍕 Pizza
+                <span class="price">Rs. 1000</span>
+            </p>
+
+            <p>🍔 Burger
+                <span class="price">Rs. 300</span>
+            </p>
+
+            <p>🍟 Fries
+                <span class="price">Rs. 200</span>
+            </p>
+
+            <p>🥤 Drink
+                <span class="price">Rs. 150</span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>© 2026 FOODIE - Online Food Ordering System</p>
+
+        <p>Fresh Food • Fast Delivery • Easy Ordering</p>
+
+    </footer>
+
+</body>
+</html>
